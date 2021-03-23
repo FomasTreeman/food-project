@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'; 
+
+import CardList from './CardList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [meals, setMeals] = useState([]);
+
+	fetch('https://api.spoonacular.com/recipes/search?&apiKey=3df764b426424927b03b93e59378d406')
+	.then(response => response.json())
+	.then(meals => {setMeals(meals)});
+	
+	return (
+		<div>
+			<h1 className= 'purple center'> Meals </h1>
+			<CardList meals={meals}/>
+		</div>
+		);
 }
 
 export default App;
