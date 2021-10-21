@@ -1,3 +1,7 @@
+# IN WORKS
+This project will soon be a website that lets you log the food you have in the house and gives you meals you could make. Bearing in mind allergies. :) 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
